@@ -66,7 +66,10 @@ const Footer = () => {
                 <Link to="/ai-search" className="text-gray-300 hover:text-white transition-colors">AI Search</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
+                <a href="#contact" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}>Contact</a>
               </li>
             </ul>
           </div>
@@ -75,19 +78,19 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-heading">Programs</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Creche</Link>
+                <Link to="/programs/creche" className="text-gray-300 hover:text-white transition-colors">Creche</Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Nursery</Link>
+                <Link to="/programs/nursery" className="text-gray-300 hover:text-white transition-colors">Nursery</Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Kindergarten</Link>
+                <Link to="/programs/kindergarten" className="text-gray-300 hover:text-white transition-colors">Kindergarten</Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Primary Education</Link>
+                <Link to="/programs/primary" className="text-gray-300 hover:text-white transition-colors">Primary Education</Link>
               </li>
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Junior High School</Link>
+                <Link to="/programs/junior-high" className="text-gray-300 hover:text-white transition-colors">Junior High School</Link>
               </li>
             </ul>
           </div>
