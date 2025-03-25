@@ -36,7 +36,7 @@ const Index = () => {
       </Splite>
       
       <Footer />
-      <WhatsAppButton phoneNumber="+233123456789" />
+      <WhatsAppButton phoneNumber="+233 54 779 8816" />
     </div>
   );
 };
