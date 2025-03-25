@@ -46,8 +46,8 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/gallery" className="nav-link">Gallery</Link>
+          <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</a>
+          <a href="#gallery" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }); }}>Gallery</a>
           <Link to="/ghanaian-education" className="nav-link">Education</Link>
           <Link to="/ai-search" className="nav-link">AI Search</Link>          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
           <Link 
@@ -93,20 +93,28 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <Link 
-            to="/about" 
+          <a 
+            href="#about" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             About
-          </Link>
-          <Link 
-            to="/gallery" 
+          </a>
+          <a 
+            href="#gallery" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Gallery
-          </Link>
+          </a>
           <Link 
             to="/ghanaian-education" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
