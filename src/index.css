@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 201 64% 53%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -32,70 +35,140 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-lg bg-white/30 border border-white/20 shadow-lg;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-lg bg-black/20 border border-white/10 shadow-lg;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-12;
+  }
+
+  .content-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow transition-colors 
+    bg-school-seaBlue text-white hover:bg-school-seaBlue/90 focus:outline-none focus:ring-2 focus:ring-school-seaBlue focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-school-seaBlue shadow-sm 
+    hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-school-seaBlue focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md border border-school-seaBlue px-4 py-2 text-sm font-medium text-school-seaBlue shadow-sm 
+    hover:bg-school-seaBlue/10 focus:outline-none focus:ring-2 focus:ring-school-seaBlue focus:ring-offset-2;
+  }
+
+  /* Card stylings */
+  .card {
+    @apply glass rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl;
+  }
+
+  /* Image stylings */
+  .img-container {
+    @apply relative overflow-hidden rounded-lg;
+  }
+
+  .img-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 hover:opacity-100;
+  }
+
+  /* Animation classes */
+  .animate-on-scroll {
+    @apply opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .animate-on-scroll.slide-up {
+    @apply translate-y-10;
+  }
+
+  .animate-on-scroll.slide-down {
+    @apply -translate-y-10;
+  }
+
+  .animate-on-scroll.slide-left {
+    @apply translate-x-10;
+  }
+
+  .animate-on-scroll.slide-right {
+    @apply -translate-x-10;
+  }
+
+  .animate-on-scroll.zoom-in {
+    @apply scale-95;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0 translate-x-0 scale-100;
+  }
+}
+
+/* Utilities for image loading */
+.image-loading {
+  @apply blur-md;
+}
+
+.image-loaded {
+  @apply blur-none transition-all duration-700 ease-out;
+}
+
+.whatsapp-btn {
+  @apply fixed bottom-6 right-6 z-50 bg-[#25D366] rounded-full p-3 shadow-lg transition-transform 
+  hover:scale-110 animate-float;
+}
+
+/* Navbar styles */
+.nav-link {
+  @apply relative text-gray-800 hover:text-school-seaBlue transition-colors duration-300 px-3 py-2 text-sm font-medium;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute left-0 bottom-0 h-[2px] w-0 bg-school-seaBlue transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.nav-link.active::after {
+  @apply w-full;
 }
