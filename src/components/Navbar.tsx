@@ -49,7 +49,7 @@ const Navbar = () => {
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/gallery" className="nav-link">Gallery</Link>
           <Link to="/ghanaian-education" className="nav-link">Education</Link>
-          <Link to="/ai-search" className="nav-link">AI Search</Link>          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/ai-search" className="nav-link">AI Search</Link>          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
           <Link 
             to="/enroll-now" 
             className="ml-4 btn-primary"
@@ -121,13 +121,17 @@ const Navbar = () => {
           >
             AI Search
           </Link>
-          <Link 
-            to="/contact" 
+          <a 
+            href="#contact" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMenuOpen(false);
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Contact
-          </Link>
+          </a>
           <Link 
             to="/enroll-now" 
             className="px-4 py-2 bg-school-seaBlue text-white rounded-md"
