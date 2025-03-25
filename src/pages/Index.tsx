@@ -1,3 +1,4 @@
+
 import { Suspense, lazy } from "react";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -21,9 +22,9 @@ const Index = () => {
       <Contact />
       
       <Splite 
-        title="Discover Serwaa Akoto Academy"
-        subtitle="Excellence in Education"
-        description="Join our diverse learning community where students thrive academically and personally. From Creche to Junior High School, we provide a nurturing environment that fosters creativity, critical thinking, and lifelong learning skills."
+        title="Join Our Educational Journey"
+        subtitle="Quality Education in Ghana"
+        description="At Serwaa Akoto Academy, we follow the Ghanaian curriculum while incorporating modern teaching methodologies to ensure our students receive a well-rounded education. From Creche to JHS, we provide a nurturing environment where children develop academically, socially, and emotionally."
       >
         <div className="rounded-xl overflow-hidden shadow-lg">
           <ImageWithLoader 

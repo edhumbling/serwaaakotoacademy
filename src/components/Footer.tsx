@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import ImageWithLoader from './ImageWithLoader';
 
 const Footer = () => {
@@ -50,16 +51,22 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-heading">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-white transition-colors">About Us</a>
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
               </li>
               <li>
-                <a href="#gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</a>
+                <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+                <Link to="/ghanaian-education" className="text-gray-300 hover:text-white transition-colors">Education</Link>
+              </li>
+              <li>
+                <Link to="/ai-search" className="text-gray-300 hover:text-white transition-colors">AI Search</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
@@ -68,19 +75,19 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-heading">Programs</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Creche</a>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Creche</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Nursery</a>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Nursery</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Kindergarten</a>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Kindergarten</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Primary Education</a>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Primary Education</Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">Junior High School</a>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Junior High School</Link>
               </li>
             </ul>
           </div>
@@ -118,8 +125,8 @@ const Footer = () => {
             &copy; {currentYear} Serwaa Akoto Academy. All rights reserved.
           </div>
           <div className="flex items-center space-x-6 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

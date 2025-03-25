@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 import ImageWithLoader from './ImageWithLoader';
 
 const Navbar = () => {
@@ -21,12 +22,12 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-2',
         isScrolled
-          ? 'bg-white/90 backdrop-blur-lg shadow-md py-2'
+          ? 'bg-white/80 backdrop-blur-lg shadow-md py-2'
           : 'bg-transparent py-4'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <ImageWithLoader
             src="https://ik.imagekit.io/humbling/WhatsApp%20Image%202025-03-24%20at%2012.03.34_91c72f1d.jpg?updatedAt=1742906038933"
             alt="Serwaa Akoto Academy Logo"
@@ -40,20 +41,22 @@ const Navbar = () => {
           )}>
             Serwaa Akoto Academy
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#gallery" className="nav-link">Gallery</a>
-          <a href="#contact" className="nav-link">Contact</a>
-          <a 
-            href="#contact" 
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/gallery" className="nav-link">Gallery</Link>
+          <Link to="/ghanaian-education" className="nav-link">Education</Link>
+          <Link to="/ai-search" className="nav-link">AI Search</Link>
+          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link 
+            to="/contact" 
             className="ml-4 btn-primary"
           >
             Enroll Now
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -80,45 +83,59 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={cn(
-        "md:hidden absolute left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300 overflow-hidden",
-        isMenuOpen ? "max-h-60 border-b border-gray-200" : "max-h-0"
+        "md:hidden absolute left-0 right-0 bg-white/90 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden",
+        isMenuOpen ? "max-h-96 border-b border-gray-200" : "max-h-0"
       )}>
         <nav className="flex flex-col space-y-2 px-4 py-4">
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
-          </a>
-          <a 
-            href="#about" 
+          </Link>
+          <Link 
+            to="/about" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             About
-          </a>
-          <a 
-            href="#gallery" 
+          </Link>
+          <Link 
+            to="/gallery" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Gallery
-          </a>
-          <a 
-            href="#contact" 
+          </Link>
+          <Link 
+            to="/ghanaian-education" 
+            className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Education
+          </Link>
+          <Link 
+            to="/ai-search" 
+            className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            AI Search
+          </Link>
+          <Link 
+            to="/contact" 
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
-          </a>
-          <a 
-            href="#contact" 
+          </Link>
+          <Link 
+            to="/contact" 
             className="px-4 py-2 bg-school-seaBlue text-white rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Enroll Now
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

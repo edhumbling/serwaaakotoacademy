@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import ImageWithLoader from './ImageWithLoader';
 import { cn } from '@/lib/utils';
-import { Paintbrush } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,10 +54,6 @@ const Hero = () => {
             "text-white max-w-xl transition-all duration-1000",
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           )}>
-            <div className="inline-flex items-center px-4 py-1 rounded-full bg-school-green/20 border border-school-green/30 text-white backdrop-blur-sm text-sm mb-4 animate-pulse-gentle">
-              <Paintbrush className="w-4 h-4 mr-2" />
-              <span>Creative Montessori Education</span>
-            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-4 leading-tight">
               Serwaa Akoto Academy
             </h1>
