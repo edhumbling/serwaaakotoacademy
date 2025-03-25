@@ -10,6 +10,11 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import GhanaianEducation from "./pages/GhanaianEducation";
 import AISearch from "./pages/AISearch";
+import IndexGlobe from "./pages/AISearchTools/IndexGlobe";
+import Farfalle from "./pages/AISearchTools/Farfalle";
+import TurboSeek from "./pages/AISearchTools/TurboSeek";
+import Omniplex from "./pages/AISearchTools/Omniplex";
+import AndiSearch from "./pages/AISearchTools/AndiSearch";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +30,11 @@ const App = () => (
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/ghanaian-education" element={<GhanaianEducation />} />
           <Route path="/ai-search" element={<AISearch />} />
+          <Route path="/ai-search/index-globe" element={<IndexGlobe />} />
+          <Route path="/ai-search/farfalle" element={<Farfalle />} />
+          <Route path="/ai-search/turboseek" element={<TurboSeek />} />
+          <Route path="/ai-search/omniplex" element={<Omniplex />} />
+          <Route path="/ai-search/andi-search" element={<AndiSearch />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

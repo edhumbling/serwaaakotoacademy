@@ -1,17 +1,16 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Link } from 'react-router-dom';
 
 const AISearch = () => {
-  const [selectedTool, setSelectedTool] = useState('index');
-
   const tools = [
-    { id: 'index', name: 'Index.Globe', url: 'https://index.globe.engineer/' },
-    { id: 'farfalle', name: 'Farfalle', url: 'https://www.farfalle.dev' },
-    { id: 'turboseek', name: 'TurboSeek', url: 'https://www.turboseek.io' },
-    { id: 'omniplex', name: 'Omniplex AI', url: 'https://omniplex.ai' },
-    { id: 'andisearch', name: 'Andi Search', url: 'https://andisearch.com' },
+    { id: 'index', name: 'Index.Globe', url: '/ai-search/index-globe' },
+    { id: 'farfalle', name: 'Farfalle', url: '/ai-search/farfalle' },
+    { id: 'turboseek', name: 'TurboSeek', url: '/ai-search/turboseek' },
+    { id: 'omniplex', name: 'Omniplex AI', url: '/ai-search/omniplex' },
+    { id: 'andisearch', name: 'Andi Search', url: '/ai-search/andi-search' },
   ];
 
   return (
@@ -28,41 +27,32 @@ const AISearch = () => {
             </p>
           </div>
           
-          {/* Tool selection tabs */}
-          <div className="flex flex-wrap gap-2 justify-center mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {tools.map((tool) => (
-              <button
+              <Link
                 key={tool.id}
-                onClick={() => setSelectedTool(tool.id)}
-                className={`px-4 py-2 rounded-md transition-all ${
-                  selectedTool === tool.id 
-                    ? 'bg-school-seaBlue text-white shadow-md' 
-                    : 'bg-gray-100 hover:bg-gray-200'
-                }`}
+                to={tool.url}
+                className="bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col"
               >
-                {tool.name}
-              </button>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold mb-2">{tool.name}</h3>
+                  <p className="text-gray-600 mb-4">
+                    Access the full {tool.name} platform to enhance your research and learning.
+                  </p>
+                  <div className="mt-auto pt-4">
+                    <span className="inline-flex items-center text-school-seaBlue font-medium">
+                      Open Tool
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
-
-          {/* Embedded tool */}
-          <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="relative w-full" style={{ height: 'calc(100vh - 320px)', minHeight: '600px' }}>
-              {tools.map((tool) => (
-                <iframe
-                  key={tool.id}
-                  src={tool.url}
-                  className={`absolute inset-0 w-full h-full border-0 ${selectedTool === tool.id ? 'block' : 'hidden'}`}
-                  title={`${tool.name} Search Tool`}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ))}
-            </div>
-          </div>
           
-          <div className="mt-8 bg-gray-50 rounded-lg p-6 shadow-sm">
+          <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
             <h2 className="text-xl font-semibold mb-4">How AI Search Tools Can Help Education</h2>
             <ul className="space-y-2 text-gray-700">
               <li>• <strong>Enhanced Research:</strong> Find relevant academic resources more efficiently</li>
