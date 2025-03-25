@@ -32,6 +32,18 @@ const Index = () => {
       observer.observe(element);
     });
 
+    // Update meta description with current year
+    const currentYear = new Date().getFullYear();
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      const description = metaDescription.getAttribute('content');
+      if (description) {
+        // Update with current year if needed
+        const updatedDescription = description.replace(/\d{4}/, currentYear.toString());
+        metaDescription.setAttribute('content', updatedDescription);
+      }
+    }
+
     return () => {
       document.querySelectorAll('.animate-on-scroll').forEach(element => {
         observer.unobserve(element);
