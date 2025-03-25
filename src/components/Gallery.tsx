@@ -27,11 +27,6 @@ const Gallery = () => {
     },
     {
       id: 3,
-      src: "https://ik.imagekit.io/humbling/creche/WhatsApp%20Image%202025-03-21%20at%2017.14.29_bb8cad6f.jpg?updatedAt=1742906297714", 
-      alt: "Smiling children in the classroom" // Replaced the frowning girl image
-    },
-    {
-      id: 4,
       src: "https://ik.imagekit.io/humbling/creche/WhatsApp%20Image%202025-03-21%20at%2017.14.29_bb8cad6f.jpg?updatedAt=1742906297714",
       alt: "Students engaged in activities"
     }
@@ -115,7 +110,7 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
             <div 
               key={image.id}

@@ -68,6 +68,12 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-heading">Programs</h4>
             <ul className="space-y-2">
               <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">Creche</a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">Nursery</a>
+              </li>
+              <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">Kindergarten</a>
               </li>
               <li>
@@ -75,9 +81,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">Junior High School</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">After School Programs</a>
               </li>
             </ul>
           </div>
@@ -102,7 +105,7 @@ const Footer = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span className="text-gray-300 text-sm">info@serwaakotoacademy.edu.gh</span>
+                <span className="text-gray-300 text-sm">serwaaakotoacademygh@gmail.com</span>
               </li>
             </ul>
           </div>

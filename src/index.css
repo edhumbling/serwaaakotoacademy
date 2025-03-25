@@ -152,7 +152,7 @@
 }
 
 .whatsapp-btn {
-  @apply fixed bottom-6 right-6 z-50 bg-[#25D366] rounded-full p-3 shadow-lg transition-transform 
+  @apply fixed bottom-6 right-6 z-50 bg-[#25D366] rounded-full p-4 shadow-lg transition-transform 
   hover:scale-110 animate-float;
 }
 
@@ -171,4 +171,27 @@
 
 .nav-link.active::after {
   @apply w-full;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+  
+  h1, h2, h3 {
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  p, span, a, li {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .content-container {
+    @apply px-3;
+  }
 }
