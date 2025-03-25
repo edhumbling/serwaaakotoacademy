@@ -52,7 +52,7 @@ const Navbar = () => {
           <Link to="/ai-search" className="nav-link">AI Search</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
           <Link 
-            to="/contact" 
+            to="/enroll-now" 
             className="ml-4 btn-primary"
           >
             Enroll Now
@@ -130,7 +130,7 @@ const Navbar = () => {
             Contact
           </Link>
           <Link 
-            to="/contact" 
+            to="/enroll-now" 
             className="px-4 py-2 bg-school-seaBlue text-white rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
