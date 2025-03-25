@@ -15,6 +15,7 @@ import Farfalle from "./pages/AISearchTools/Farfalle";
 import TurboSeek from "./pages/AISearchTools/TurboSeek";
 import Omniplex from "./pages/AISearchTools/Omniplex";
 import AndiSearch from "./pages/AISearchTools/AndiSearch";
+import EnrollNow from "./pages/EnrollNow";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/ai-search/turboseek" element={<TurboSeek />} />
           <Route path="/ai-search/omniplex" element={<Omniplex />} />
           <Route path="/ai-search/andi-search" element={<AndiSearch />} />
+          <Route path="/enroll-now" element={<EnrollNow />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

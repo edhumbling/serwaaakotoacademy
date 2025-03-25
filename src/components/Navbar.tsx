@@ -49,8 +49,7 @@ const Navbar = () => {
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/gallery" className="nav-link">Gallery</Link>
           <Link to="/ghanaian-education" className="nav-link">Education</Link>
-          <Link to="/ai-search" className="nav-link">AI Search</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/ai-search" className="nav-link">AI Search</Link>          <Link to="/contact" className="nav-link">Contact</Link>
           <Link 
             to="/enroll-now" 
             className="ml-4 btn-primary"
