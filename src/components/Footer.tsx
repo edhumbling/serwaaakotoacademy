@@ -54,7 +54,7 @@ const Footer = () => {
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
+                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Academy</Link>
               </li>
               <li>
                 <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</Link>
@@ -66,10 +66,29 @@ const Footer = () => {
                 <Link to="/ai-search" className="text-gray-300 hover:text-white transition-colors">AI Search</Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => {
+                <a href="#contact" className="text-gray-300 hover:text-white transition-colors fixed bottom-8 right-8 w-12 h-12 rounded-full backdrop-blur-sm bg-black/30 border border-white/10 flex items-center justify-center group hover:bg-black/50 transition-all" onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }}>Contact</a>
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    const isAtBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 100;
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className={`w-6 h-6 text-white transform transition-transform group-hover:scale-110 ${window.pageYOffset > 100 ? 'rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+                    />
+                  </svg>
+                </a>
               </li>
             </ul>
           </div>
@@ -115,7 +134,7 @@ const Footer = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span className="text-gray-300 text-sm">serwaaakotoacademygh@gmail.com</span>
+                <span className="text-gray-300 text-xs sm:text-sm break-all">serwaaakotoacademygh@gmail.com</span>
               </li>
             </ul>
           </div>
