@@ -78,19 +78,19 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4 font-heading">Programs</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/ghanaian-education#creche" className="text-gray-300 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Creche</Link>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Creche</Link>
               </li>
               <li>
-                <Link to="/ghanaian-education#nursery" className="text-gray-300 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Nursery</Link>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Nursery</Link>
               </li>
               <li>
-                <Link to="/ghanaian-education#kindergarten" className="text-gray-300 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Kindergarten</Link>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Kindergarten</Link>
               </li>
               <li>
-                <Link to="/ghanaian-education#primary" className="text-gray-300 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Primary Education</Link>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Primary Education</Link>
               </li>
               <li>
-                <Link to="/ghanaian-education#junior-high" className="text-gray-300 hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Junior High School</Link>
+                <Link to="/" className="text-gray-300 hover:text-white transition-colors">Junior High School</Link>
               </li>
             </ul>
           </div>
@@ -128,8 +128,8 @@ const Footer = () => {
             &copy; {currentYear} Serwaa Akoto Academy. All rights reserved.
           </div>
           <div className="flex items-center space-x-6 text-sm text-gray-400">
-            <Link to="/privacy" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors" onClick={() => window.scrollTo(0, 0)}>Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ phoneNumber }) => {
           clipRule="evenodd"
         />
       </svg>
-      <span className="absolute -top-2 right-0 bg-white text-green-600 text-xs font-bold px-2 py-1 rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Chat Now</span>
+      <span className="absolute -top-2 right-0 bg-white text-green-600 text-xs font-bold px-2 py-1 rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">Chat with SAA</span>
     </a>
   );
 };
