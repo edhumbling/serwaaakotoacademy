@@ -54,10 +54,10 @@ const Footer = () => {
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link>
+                <a href="#about" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About Us</a>
               </li>
               <li>
-                <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</Link>
+                <a href="#gallery" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }); }}>Gallery</a>
               </li>
               <li>
                 <Link to="/ghanaian-education" className="text-gray-300 hover:text-white transition-colors">Education</Link>
