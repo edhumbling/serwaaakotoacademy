@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import ImageWithLoader from './ImageWithLoader';
+import MarqueeText from './MarqueeText';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -140,16 +141,13 @@ const Footer = () => {
       </div>
 
       {/* Scrolling Text Banner */}
-      <div className="overflow-hidden py-4 border-t border-gray-800 bg-black">
-        <div className="relative h-16 md:h-20 flex items-center">
-          <div className="flex whitespace-nowrap">
-            <div className="animate-scrolling-text inline-block whitespace-nowrap text-4xl md:text-6xl font-bold animate-yellow-green-glow">
-              Serwaa Akoto Academy • Quality Education • Excellence • Innovation • Serwaa Akoto Academy • Quality Education • Excellence • Innovation •
-            </div>
-            <div className="animate-scrolling-text inline-block whitespace-nowrap text-4xl md:text-6xl font-bold animate-yellow-green-glow" style={{ animationDelay: '12.5s' }}>
-              Serwaa Akoto Academy • Quality Education • Excellence • Innovation • Serwaa Akoto Academy • Quality Education • Excellence • Innovation •
-            </div>
-          </div>
+      <div className="py-4 border-t border-gray-800 bg-black">
+        <div className="h-16 md:h-20 flex items-center">
+          <MarqueeText
+            text="Serwaa Akoto Academy • Quality Education • Excellence • Innovation •"
+            speed={80}
+            className="text-4xl md:text-6xl font-bold animate-yellow-green-glow"
+          />
         </div>
       </div>
 
