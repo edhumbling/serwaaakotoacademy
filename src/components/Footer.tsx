@@ -72,6 +72,9 @@ const Footer = () => {
                 <Link to="/stem-resources" className="text-gray-300 hover:text-white transition-colors">STEM</Link>
               </li>
               <li>
+                <Link to="/ghana-holidays" className="text-gray-300 hover:text-white transition-colors">Ghana Holidays</Link>
+              </li>
+              <li>
                 <Link to="/apply-for-job" className="text-gray-300 hover:text-white transition-colors">Careers</Link>
               </li>
               <li>
@@ -141,24 +144,6 @@ const Footer = () => {
         <div className="relative flex items-center justify-center">
           <div className="whitespace-nowrap text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-scrolling-text">
             Serwaa Akoto Academy • Quality Education • Excellence • Innovation • Serwaa Akoto Academy •
-          </div>
-        </div>
-      </div>
-
-      {/* Ghana Holidays Calendar */}
-      <div className="border-t border-gray-800 py-4">
-        <div className="content-container">
-          <h4 className="text-lg font-bold mb-4 font-heading text-center">Ghana Public Holidays</h4>
-          <div className="w-full overflow-hidden rounded-lg shadow-md" style={{ height: '300px' }}>
-            <iframe
-              src="https://calendar.google.com/calendar/u/0/embed?color=%2316a765&src=en.gh%23holiday@group.v.calendar.google.com&ctz=Africa/Accra&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0"
-              style={{ border: '0' }}
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              scrolling="no"
-              title="Ghana Public Holidays Calendar"
-            ></iframe>
           </div>
         </div>
       </div>
