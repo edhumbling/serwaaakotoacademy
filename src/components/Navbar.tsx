@@ -49,9 +49,11 @@ const Navbar = () => {
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/gallery" className="nav-link">Gallery</Link>
           <Link to="/ghanaian-education" className="nav-link">Education</Link>
-          <Link to="/ai-search" className="nav-link">AI Search</Link>          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
-          <Link 
-            to="/enroll-now" 
+          <Link to="/ai-search" className="nav-link">AI Search</Link>
+          <Link to="/apply-for-job" className="nav-link">Careers</Link>
+          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
+          <Link
+            to="/enroll-now"
             className="ml-4 btn-primary"
           >
             Enroll Now
@@ -59,16 +61,16 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="md:hidden p-2 rounded-md text-gray-800 hover:bg-gray-100 focus:outline-none"
           aria-label="Toggle menu"
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6" 
-            fill="none" 
-            viewBox="0 0 24 24" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
             {isMenuOpen ? (
@@ -86,43 +88,43 @@ const Navbar = () => {
         isMenuOpen ? "max-h-96 border-b border-gray-200" : "max-h-0"
       )}>
         <nav className="flex flex-col space-y-2 px-4 py-4">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
-          <Link 
-            to="/about" 
+          <Link
+            to="/about"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </Link>
-          <Link 
-            to="/gallery" 
+          <Link
+            to="/gallery"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Gallery
           </Link>
-          <Link 
-            to="/ghanaian-education" 
+          <Link
+            to="/ghanaian-education"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             Education
           </Link>
-          <Link 
-            to="/ai-search" 
+          <Link
+            to="/ai-search"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
             AI Search
           </Link>
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
             onClick={(e) => {
               e.preventDefault();
@@ -132,8 +134,15 @@ const Navbar = () => {
           >
             Contact
           </a>
-          <Link 
-            to="/enroll-now" 
+          <Link
+            to="/apply-for-job"
+            className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Careers
+          </Link>
+          <Link
+            to="/enroll-now"
             className="px-4 py-2 bg-school-seaBlue text-white rounded-md"
             onClick={() => setIsMenuOpen(false)}
           >
