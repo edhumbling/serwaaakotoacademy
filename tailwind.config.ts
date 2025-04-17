@@ -117,8 +117,8 @@ export default {
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
         'scroll-text': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         'color-wave': {
           '0%': {
@@ -192,7 +192,7 @@ export default {
         'slide-down': 'slide-down 0.5s ease-out',
         'slide-left': 'slide-left 0.5s ease-out',
         'slide-right': 'slide-right 0.5s ease-out',
-        'scrolling-text': 'scroll-text 10s linear infinite',
+        'scrolling-text': 'scroll-text 15s linear infinite',
         'color-wave': 'color-wave 8s linear infinite',
         'text-glow': 'text-glow 3s ease-in-out infinite',
         'yellow-green-glow': 'yellow-green-glow 2s ease-in-out infinite',
