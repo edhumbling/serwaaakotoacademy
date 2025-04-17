@@ -87,9 +87,20 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div className={cn(
         "md:hidden absolute left-0 right-0 bg-white/90 backdrop-blur-lg shadow-lg transition-all duration-300 overflow-hidden",
-        isMenuOpen ? "max-h-96 border-b border-gray-200" : "max-h-0"
+        isMenuOpen ? "max-h-[500px] border-b border-gray-200" : "max-h-0"
       )}>
         <nav className="flex flex-col space-y-2 px-4 py-4">
+          {/* Prominent Enroll Now Button at the top */}
+          <Link
+            to="/enroll-now"
+            className="px-4 py-3 bg-school-seaBlue text-white rounded-md text-center font-medium text-base mb-2 shadow-md hover:bg-school-seaBlue/90 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Enroll Now
+          </Link>
+
+          <div className="border-t border-gray-200 my-2 pt-2"></div>
+
           <Link
             to="/"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
@@ -164,13 +175,6 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Careers
-          </Link>
-          <Link
-            to="/enroll-now"
-            className="px-4 py-2 bg-school-seaBlue text-white rounded-md"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Enroll Now
           </Link>
         </nav>
       </div>
