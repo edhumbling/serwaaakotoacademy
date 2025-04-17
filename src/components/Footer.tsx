@@ -142,7 +142,7 @@ const Footer = () => {
       {/* Scrolling Text Banner */}
       <div className="overflow-hidden bg-black py-4 border-t border-gray-800">
         <div className="relative flex items-center justify-center">
-          <div className="whitespace-nowrap text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-scrolling-text">
+          <div className="whitespace-nowrap text-4xl md:text-6xl font-bold animate-scrolling-text animate-yellow-green-glow">
             Serwaa Akoto Academy • Quality Education • Excellence • Innovation • Serwaa Akoto Academy •
           </div>
         </div>
@@ -170,7 +170,7 @@ const Footer = () => {
           className="inline-block hover:text-white transition-all duration-300 animate-text-glow"
         >
           Emma
-        </a> from AIDEL
+        </a> from Artificial Intelligence Development Experimental Labs (AIDEL)
       </div>
     </footer>
   );

@@ -148,6 +148,16 @@ export default {
             textShadow: '0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #00ffff'
           },
         },
+        'yellow-green-glow': {
+          '0%, 100%': {
+            color: '#FFD54F',
+            textShadow: '0 0 15px #FFD54F, 0 0 25px #FFD54F, 0 0 35px #FFD54F'
+          },
+          '50%': {
+            color: '#4CAF50',
+            textShadow: '0 0 15px #4CAF50, 0 0 25px #4CAF50, 0 0 35px #4CAF50'
+          },
+        },
         'gradient-flash': {
           '0%': {
             backgroundPosition: '0% 50%',
@@ -182,9 +192,10 @@ export default {
         'slide-down': 'slide-down 0.5s ease-out',
         'slide-left': 'slide-left 0.5s ease-out',
         'slide-right': 'slide-right 0.5s ease-out',
-        'scrolling-text': 'scroll-text 20s linear infinite',
+        'scrolling-text': 'scroll-text 12s linear infinite',
         'color-wave': 'color-wave 8s linear infinite',
         'text-glow': 'text-glow 3s ease-in-out infinite',
+        'yellow-green-glow': 'yellow-green-glow 2s ease-in-out infinite',
         'gradient-flash': 'gradient-flash 5s ease infinite',
 			},
       fontFamily: {
