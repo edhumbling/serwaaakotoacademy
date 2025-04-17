@@ -50,6 +50,7 @@ const Navbar = () => {
           <a href="#gallery" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }); }}>Gallery</a>
           <Link to="/ghanaian-education" className="nav-link">Education</Link>
           <Link to="/ai-search" className="nav-link">AI Search</Link>
+          <Link to="/academy-resources" className="nav-link">Resources</Link>
           <Link to="/apply-for-job" className="nav-link">Careers</Link>
           <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
           <Link
@@ -130,6 +131,13 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             AI Search
+          </Link>
+          <Link
+            to="/academy-resources"
+            className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Resources
           </Link>
           <a
             href="#contact"
