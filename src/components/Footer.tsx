@@ -145,6 +145,24 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Ghana Holidays Calendar */}
+      <div className="border-t border-gray-800 py-4">
+        <div className="content-container">
+          <h4 className="text-lg font-bold mb-4 font-heading text-center">Ghana Public Holidays</h4>
+          <div className="w-full overflow-hidden rounded-lg shadow-md" style={{ height: '300px' }}>
+            <iframe
+              src="https://calendar.google.com/calendar/u/0/embed?color=%2316a765&src=en.gh%23holiday@group.v.calendar.google.com&ctz=Africa/Accra&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0"
+              style={{ border: '0' }}
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              scrolling="no"
+              title="Ghana Public Holidays Calendar"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
       {/* Footer Bottom */}
       <div className="border-t border-gray-800">
         <div className="content-container py-6 flex flex-col md:flex-row justify-between items-center">
