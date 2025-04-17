@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Gallery from '@/components/Gallery';
 import Contact from '@/components/Contact';
-import WhatsAppButton from '@/components/WhatsAppButton';
 import ScrollButton from '@/components/ScrollButton';
 import ScrollToTop from '@/components/ScrollToTop';
 
@@ -19,7 +18,6 @@ const Index = () => {
         <Gallery />
         <Contact />
       </main>
-      <WhatsAppButton phoneNumber="233547798816" />
       <ScrollButton />
       <Footer />
     </div>

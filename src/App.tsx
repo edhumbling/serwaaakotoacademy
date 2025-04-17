@@ -2,6 +2,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import ScrollButton from "@/components/ScrollButton";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -41,6 +42,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <ScrollButton />
+        <WhatsAppButton phoneNumber="233547798816" />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
