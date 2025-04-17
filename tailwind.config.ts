@@ -65,7 +65,7 @@ export default {
 				},
         // School colors
         school: {
-          seaBlue: '#3A97D4', 
+          seaBlue: '#3A97D4',
           green: '#4CAF50',
           yellow: '#FFD54F',
         },
@@ -116,6 +116,38 @@ export default {
           '0%': { transform: 'translateX(-20px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        'scroll-text': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'color-wave': {
+          '0%': {
+            filter: 'hue-rotate(0deg) brightness(1)',
+            textShadow: '0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.3)'
+          },
+          '33%': {
+            filter: 'hue-rotate(120deg) brightness(1.2)',
+            textShadow: '0 0 15px rgba(0, 255, 255, 0.7), 0 0 25px rgba(0, 255, 255, 0.5), 0 0 35px rgba(0, 255, 255, 0.3)'
+          },
+          '66%': {
+            filter: 'hue-rotate(240deg) brightness(1.1)',
+            textShadow: '0 0 12px rgba(255, 255, 0, 0.7), 0 0 22px rgba(255, 255, 0, 0.5), 0 0 32px rgba(255, 255, 0, 0.3)'
+          },
+          '100%': {
+            filter: 'hue-rotate(360deg) brightness(1)',
+            textShadow: '0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5), 0 0 30px rgba(255, 0, 255, 0.3)'
+          },
+        },
+        'text-glow': {
+          '0%, 100%': {
+            color: '#ff69b4',
+            textShadow: '0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4'
+          },
+          '50%': {
+            color: '#00ffff',
+            textShadow: '0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #00ffff'
+          },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -128,6 +160,9 @@ export default {
         'slide-down': 'slide-down 0.5s ease-out',
         'slide-left': 'slide-left 0.5s ease-out',
         'slide-right': 'slide-right 0.5s ease-out',
+        'scrolling-text': 'scroll-text 20s linear infinite',
+        'color-wave': 'color-wave 8s linear infinite',
+        'text-glow': 'text-glow 3s ease-in-out infinite',
 			},
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

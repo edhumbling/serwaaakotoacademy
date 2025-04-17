@@ -7,8 +7,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white">
-      <div className="content-container py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="content-container py-10 md:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <ImageWithLoader
@@ -69,28 +69,14 @@ const Footer = () => {
                 <Link to="/apply-for-job" className="text-gray-300 hover:text-white transition-colors">Careers</Link>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors fixed bottom-8 right-8 w-12 h-12 rounded-full backdrop-blur-sm bg-black/30 border border-white/10 flex items-center justify-center group hover:bg-black/50 transition-all" onClick={(e) => {
+                <a href="#contact" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => {
                   e.preventDefault();
                   const contactSection = document.getElementById('contact');
                   if (contactSection) {
-                    const isAtBottom = window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 100;
                     contactSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`w-6 h-6 text-white transform transition-transform group-hover:scale-110 ${window.pageYOffset > 100 ? 'rotate-180' : ''}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    />
-                  </svg>
+                  Contact
                 </a>
               </li>
             </ul>
@@ -144,6 +130,16 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Scrolling Text Banner */}
+      <div className="overflow-hidden bg-black py-4 border-t border-gray-800">
+        <div className="relative flex items-center justify-center">
+          <div className="whitespace-nowrap text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-scrolling-text">
+            Serwaa Akoto Academy • Quality Education • Excellence • Innovation • Serwaa Akoto Academy •
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Bottom */}
       <div className="border-t border-gray-800">
         <div className="content-container py-6 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
@@ -154,87 +150,19 @@ const Footer = () => {
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
-        <div className="overflow-hidden bg-black py-4 border-t border-gray-800">
-          <div className="animate-scrolling-text whitespace-nowrap text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 glow-wave-effect">
-            Serwaa Akoto Academy
-          </div>
-        </div>
       </div>
 
+      {/* Credits */}
       <div className="py-3 text-center text-xs text-gray-500 border-t border-gray-800">
         Made by <a
           href="https://linkedin.com/in/edhumbling"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block hover:text-white transition-all duration-300 glow-effect"
+          className="inline-block hover:text-white transition-all duration-300 animate-text-glow"
         >
           Emma
         </a> from AIDEL
       </div>
-
-      <style jsx>{`
-        @keyframes scrollText {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-
-        @keyframes colorWave {
-          0% {
-            filter: hue-rotate(0deg) brightness(1);
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
-                       0 0 20px rgba(255, 0, 255, 0.5),
-                       0 0 30px rgba(255, 0, 255, 0.3);
-          }
-          33% {
-            filter: hue-rotate(120deg) brightness(1.2);
-            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7),
-                       0 0 25px rgba(0, 255, 255, 0.5),
-                       0 0 35px rgba(0, 255, 255, 0.3);
-          }
-          66% {
-            filter: hue-rotate(240deg) brightness(1.1);
-            text-shadow: 0 0 12px rgba(255, 255, 0, 0.7),
-                       0 0 22px rgba(255, 255, 0, 0.5),
-                       0 0 32px rgba(255, 255, 0, 0.3);
-          }
-          100% {
-            filter: hue-rotate(360deg) brightness(1);
-            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
-                       0 0 20px rgba(255, 0, 255, 0.5),
-                       0 0 30px rgba(255, 0, 255, 0.3);
-          }
-        }
-
-        .animate-scrolling-text {
-          animation: scrollText 20s linear infinite,
-                     colorWave 8s linear infinite;
-        }
-
-        .glow-wave-effect {
-          position: relative;
-          color: #fff;
-          animation: textGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes textGlow {
-          0%, 100% {
-            color: #ff69b4;
-            text-shadow: 0 0 10px #ff69b4,
-                       0 0 20px #ff69b4,
-                       0 0 30px #ff69b4;
-          }
-          50% {
-            color: #00ffff;
-            text-shadow: 0 0 15px #00ffff,
-                       0 0 25px #00ffff,
-                       0 0 35px #00ffff;
-          }
-        }
-      `}</style>
     </footer>
   );
 };
