@@ -4,8 +4,9 @@ import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
 
 const StemResources = () => {
-  // CSS for the flashing gradient links
-  const gradientLinkClass = "font-medium text-transparent bg-clip-text bg-gradient-to-r from-school-seaBlue via-school-green to-school-yellow animate-gradient-flash hover:underline";
+  // CSS for the simple colored links
+  const yellowLinkClass = "font-medium text-school-yellow hover:underline hover:text-amber-600 transition-colors";
+  const greenLinkClass = "font-medium text-school-green hover:underline hover:text-emerald-700 transition-colors";
 
   // STEM Resources data
   const stemWebsites = [
@@ -115,7 +116,7 @@ const StemResources = () => {
       <main className="flex-1 pt-24 pb-12">
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <h1 className="text-3xl font-bold mb-8 text-center">STEM Resources For Serwaa Akoto Academy</h1>
-          
+
           <div className="prose prose-lg max-w-none space-y-8">
             <section className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-sm">
               <h2 className="text-2xl font-semibold mb-4 text-school-seaBlue">What is STEM?</h2>
@@ -149,14 +150,14 @@ const StemResources = () => {
 
             <section className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-sm">
               <h2 className="text-2xl font-semibold mb-4 text-school-seaBlue">A Comprehensive list of STEM resources for Serwaa Akoto Academy</h2>
-              
+
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl font-semibold mb-3 text-school-green">Cool STEM Websites</h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     {stemWebsites.map((site, index) => (
                       <li key={index} className="mb-1">
-                        <a href={site.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={site.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {site.name}
                         </a>
                       </li>
@@ -169,7 +170,7 @@ const StemResources = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {governmentInitiatives.map((initiative, index) => (
                       <li key={index} className="mb-1">
-                        <a href={initiative.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={initiative.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {initiative.name}
                         </a>
                       </li>
@@ -182,7 +183,7 @@ const StemResources = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     {scienceGamesApps.map((app, index) => (
                       <li key={index} className="mb-1">
-                        <a href={app.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={app.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {app.name}
                         </a>
                       </li>
@@ -195,7 +196,7 @@ const StemResources = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {mathGamesApps.map((app, index) => (
                       <li key={index} className="mb-1">
-                        <a href={app.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={app.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {app.name}
                         </a>
                       </li>
@@ -208,7 +209,7 @@ const StemResources = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     {stemCamps.map((camp, index) => (
                       <li key={index} className="mb-1">
-                        <a href={camp.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={camp.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {camp.name}
                         </a>
                       </li>
@@ -221,7 +222,7 @@ const StemResources = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {books.map((book, index) => (
                       <li key={index} className="mb-1">
-                        <a href={book.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={book.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {book.name}
                         </a>
                       </li>
@@ -234,7 +235,7 @@ const StemResources = () => {
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                     {teachersEducators.map((resource, index) => (
                       <li key={index} className="mb-1">
-                        <a href={resource.url} target="_blank" rel="noopener noreferrer" className={gradientLinkClass}>
+                        <a href={resource.url} target="_blank" rel="noopener noreferrer" className={index % 2 === 0 ? yellowLinkClass : greenLinkClass}>
                           {resource.name}
                         </a>
                       </li>
