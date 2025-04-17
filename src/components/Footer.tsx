@@ -140,9 +140,9 @@ const Footer = () => {
       </div>
 
       {/* Scrolling Text Banner */}
-      <div className="overflow-hidden bg-gradient-to-r from-school-seaBlue via-school-green to-school-yellow py-4 border-t border-gray-800">
-        <div className="relative flex items-center justify-center">
-          <div className="whitespace-nowrap text-4xl md:text-6xl font-bold animate-scrolling-text animate-yellow-green-glow">
+      <div className="overflow-hidden py-4 border-t border-gray-800 bg-black">
+        <div className="relative h-16 md:h-20">
+          <div className="whitespace-nowrap text-4xl md:text-6xl font-bold animate-scrolling-text animate-yellow-green-glow absolute top-1/2 -translate-y-1/2">
             Serwaa Akoto Academy • Quality Education • Excellence • Innovation • Serwaa Akoto Academy •
           </div>
         </div>
