@@ -148,6 +148,28 @@ export default {
             textShadow: '0 0 15px #00ffff, 0 0 25px #00ffff, 0 0 35px #00ffff'
           },
         },
+        'gradient-flash': {
+          '0%': {
+            backgroundPosition: '0% 50%',
+            textShadow: '0 0 10px rgba(58, 151, 212, 0.7), 0 0 20px rgba(58, 151, 212, 0.5)'
+          },
+          '25%': {
+            backgroundPosition: '50% 100%',
+            textShadow: '0 0 10px rgba(76, 175, 80, 0.7), 0 0 20px rgba(76, 175, 80, 0.5)'
+          },
+          '50%': {
+            backgroundPosition: '100% 50%',
+            textShadow: '0 0 10px rgba(255, 213, 79, 0.7), 0 0 20px rgba(255, 213, 79, 0.5)'
+          },
+          '75%': {
+            backgroundPosition: '50% 0%',
+            textShadow: '0 0 10px rgba(233, 30, 99, 0.7), 0 0 20px rgba(233, 30, 99, 0.5)'
+          },
+          '100%': {
+            backgroundPosition: '0% 50%',
+            textShadow: '0 0 10px rgba(58, 151, 212, 0.7), 0 0 20px rgba(58, 151, 212, 0.5)'
+          },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -163,6 +185,7 @@ export default {
         'scrolling-text': 'scroll-text 20s linear infinite',
         'color-wave': 'color-wave 8s linear infinite',
         'text-glow': 'text-glow 3s ease-in-out infinite',
+        'gradient-flash': 'gradient-flash 5s ease infinite',
 			},
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

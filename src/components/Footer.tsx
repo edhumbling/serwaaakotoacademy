@@ -69,6 +69,9 @@ const Footer = () => {
                 <Link to="/academy-resources" className="text-gray-300 hover:text-white transition-colors">Resources</Link>
               </li>
               <li>
+                <Link to="/stem-resources" className="text-gray-300 hover:text-white transition-colors">STEM</Link>
+              </li>
+              <li>
                 <Link to="/apply-for-job" className="text-gray-300 hover:text-white transition-colors">Careers</Link>
               </li>
               <li>

@@ -28,6 +28,7 @@ import QwenMath from "./pages/AcademyResources/QwenMath";
 import KhayaAi from "./pages/AcademyResources/KhayaAi";
 import Kiddlepedia from "./pages/AcademyResources/Kiddlepedia";
 import NumberBlocks from "./pages/AcademyResources/NumberBlocks";
+import StemResources from "./pages/StemResources";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +62,7 @@ const App = () => (
           <Route path="/academy-resources/khaya-ai" element={<KhayaAi />} />
           <Route path="/academy-resources/kiddlepedia" element={<Kiddlepedia />} />
           <Route path="/academy-resources/numberblocks" element={<NumberBlocks />} />
+          <Route path="/stem-resources" element={<StemResources />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
