@@ -180,6 +180,18 @@ export default {
             textShadow: '0 0 10px rgba(58, 151, 212, 0.7), 0 0 20px rgba(58, 151, 212, 0.5)'
           },
         },
+        'gate-reveal': {
+          '0%': {
+            transform: 'translateY(100%)',
+            opacity: '0.9',
+            boxShadow: '0 -5px 20px rgba(0, 0, 0, 0.1)'
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+            boxShadow: '0 -10px 30px rgba(0, 0, 0, 0.25)'
+          },
+        },
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -197,6 +209,7 @@ export default {
         'text-glow': 'text-glow 3s ease-in-out infinite',
         'yellow-green-glow': 'yellow-green-glow 2s ease-in-out infinite',
         'gradient-flash': 'gradient-flash 5s ease infinite',
+        'gate-reveal': 'gate-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
 			},
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
