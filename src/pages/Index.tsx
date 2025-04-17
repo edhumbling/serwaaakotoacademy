@@ -6,6 +6,8 @@ import About from '@/components/About';
 import Gallery from '@/components/Gallery';
 import Contact from '@/components/Contact';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import ScrollButton from '@/components/ScrollButton';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const Index = () => {
   return (
@@ -16,8 +18,9 @@ const Index = () => {
         <About />
         <Gallery />
         <Contact />
-        <WhatsAppButton phoneNumber="233547798816" />
       </main>
+      <WhatsAppButton phoneNumber="233547798816" />
+      <ScrollButton />
       <Footer />
     </div>
   );

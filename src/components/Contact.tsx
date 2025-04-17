@@ -35,30 +35,29 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulate form submission
-    setFormStatus('submitting');
+    const formData = new FormData(e.currentTarget);
+    const message = `Hello! I have a message for Serwaa Koto Academy.\n\nDetails:\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nSubject: ${formData.get('subject')}\nMessage: ${formData.get('message')}`;
+    const whatsappUrl = `https://wa.me/233547798816?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
     
+    // Reset form
+    const form = e.currentTarget;
+    form.reset();
+    
+    // Show success message
+    setFormStatus('success');
     setTimeout(() => {
-      setFormStatus('success');
-      
-      // Reset form
-      const form = e.target as HTMLFormElement;
-      form.reset();
-      
-      // Reset status after a delay
-      setTimeout(() => {
-        setFormStatus(null);
-      }, 3000);
-    }, 1500);
+      setFormStatus(null);
+    }, 3000);
   };
 
   return (
     <section 
       id="contact" 
       ref={sectionRef}
-      className="section-padding bg-gradient-to-b from-white to-gray-50"
+      className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 lg:px-8"
     >
-      <div className="content-container">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className={cn(
             "text-3xl md:text-4xl font-bold mb-4 text-gray-900 transition-all duration-700",
@@ -120,9 +119,11 @@ const Contact = () => {
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-lg font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600 mt-1">serwaaakotoacademygh@gmail.com</p>
+                    <p className="text-gray-600 mt-1 break-all">
+                      serwaaakotoacademygh@gmail.com
+                    </p>
                   </div>
                 </div>
               </div>
@@ -166,7 +167,7 @@ const Contact = () => {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-school-seaBlue focus:border-school-seaBlue transition-colors"
+                      className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-150 ease-in-out"
                       placeholder="Your Name"
                     />
                   </div>
@@ -179,7 +180,7 @@ const Contact = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-school-seaBlue focus:border-school-seaBlue transition-colors"
+                      className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-150 ease-in-out"
                       placeholder="Your Email"
                     />
                   </div>
@@ -194,7 +195,7 @@ const Contact = () => {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-school-seaBlue focus:border-school-seaBlue transition-colors"
+                    className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-150 ease-in-out"
                     placeholder="Subject"
                   />
                 </div>
@@ -208,7 +209,7 @@ const Contact = () => {
                     name="message"
                     rows={4}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-school-seaBlue focus:border-school-seaBlue transition-colors"
+                    className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 transition duration-150 ease-in-out"
                     placeholder="Your Message"
                   ></textarea>
                 </div>
@@ -217,7 +218,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={formStatus === 'submitting'}
-                    className={`w-full btn-primary ${formStatus === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    className={`w-full flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-lg text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-700 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transform hover:scale-[1.02] transition-all duration-150 ${formStatus === 'submitting' ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
                     {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
                   </button>

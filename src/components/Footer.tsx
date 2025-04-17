@@ -54,10 +54,10 @@ const Footer = () => {
                 <Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Academy</Link>
+                <a href="#about" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About Us</a>
               </li>
               <li>
-                <Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</Link>
+                <a href="#gallery" className="text-gray-300 hover:text-white transition-colors" onClick={(e) => { e.preventDefault(); document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }); }}>Gallery</a>
               </li>
               <li>
                 <Link to="/ghanaian-education" className="text-gray-300 hover:text-white transition-colors">Education</Link>
@@ -154,7 +154,87 @@ const Footer = () => {
             <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
+        <div className="overflow-hidden bg-black py-4 border-t border-gray-800">
+          <div className="animate-scrolling-text whitespace-nowrap text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 glow-wave-effect">
+            Serwaa Akoto Academy
+          </div>
+        </div>
       </div>
+
+      <div className="py-3 text-center text-xs text-gray-500 border-t border-gray-800">
+        Made by <a
+          href="https://linkedin.com/in/edhumbling"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block hover:text-white transition-all duration-300 glow-effect"
+        >
+          Emma
+        </a> from AIDEL
+      </div>
+
+      <style jsx>{`
+        @keyframes scrollText {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        @keyframes colorWave {
+          0% {
+            filter: hue-rotate(0deg) brightness(1);
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
+                       0 0 20px rgba(255, 0, 255, 0.5),
+                       0 0 30px rgba(255, 0, 255, 0.3);
+          }
+          33% {
+            filter: hue-rotate(120deg) brightness(1.2);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7),
+                       0 0 25px rgba(0, 255, 255, 0.5),
+                       0 0 35px rgba(0, 255, 255, 0.3);
+          }
+          66% {
+            filter: hue-rotate(240deg) brightness(1.1);
+            text-shadow: 0 0 12px rgba(255, 255, 0, 0.7),
+                       0 0 22px rgba(255, 255, 0, 0.5),
+                       0 0 32px rgba(255, 255, 0, 0.3);
+          }
+          100% {
+            filter: hue-rotate(360deg) brightness(1);
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
+                       0 0 20px rgba(255, 0, 255, 0.5),
+                       0 0 30px rgba(255, 0, 255, 0.3);
+          }
+        }
+
+        .animate-scrolling-text {
+          animation: scrollText 20s linear infinite,
+                     colorWave 8s linear infinite;
+        }
+
+        .glow-wave-effect {
+          position: relative;
+          color: #fff;
+          animation: textGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes textGlow {
+          0%, 100% {
+            color: #ff69b4;
+            text-shadow: 0 0 10px #ff69b4,
+                       0 0 20px #ff69b4,
+                       0 0 30px #ff69b4;
+          }
+          50% {
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff,
+                       0 0 25px #00ffff,
+                       0 0 35px #00ffff;
+          }
+        }
+      `}</style>
     </footer>
   );
 };
