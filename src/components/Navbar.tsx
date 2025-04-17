@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ImageWithLoader from './ImageWithLoader';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,24 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Helper function to handle navigation for section links
+  const handleSectionNavigation = (e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault();
+
+    // If we're on the home page, scroll to the section
+    if (location.pathname === '/') {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        setIsMenuOpen(false);
+        return;
+      }
+    }
+
+    // If we're on another page, navigate to home page with the section hash
+    window.location.href = `/${sectionId === 'about' ? '#about' : sectionId === 'gallery' ? '#gallery' : '#contact'}`;
+  };
 
   return (
     <header
@@ -46,14 +65,14 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1">
           <Link to="/" className="nav-link">Home</Link>
-          <a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</a>
-          <a href="#gallery" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }); }}>Gallery</a>
+          <a href="#about" className="nav-link" onClick={(e) => handleSectionNavigation(e, 'about')}>About</a>
+          <a href="#gallery" className="nav-link" onClick={(e) => handleSectionNavigation(e, 'gallery')}>Gallery</a>
           <Link to="/ghanaian-education" className="nav-link">Education</Link>
           <Link to="/ai-search" className="nav-link">AI Search</Link>
           <Link to="/academy-resources" className="nav-link">Resources</Link>
           <Link to="/stem-resources" className="nav-link">STEM</Link>
           <Link to="/apply-for-job" className="nav-link">Careers</Link>
-          <a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact</a>
+          <a href="#contact" className="nav-link" onClick={(e) => handleSectionNavigation(e, 'contact')}>Contact</a>
           <Link
             to="/enroll-now"
             className="ml-4 btn-primary"
@@ -111,22 +130,14 @@ const Navbar = () => {
           <a
             href="#about"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-              setIsMenuOpen(false);
-            }}
+            onClick={(e) => handleSectionNavigation(e, 'about')}
           >
             About
           </a>
           <a
             href="#gallery"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
-              setIsMenuOpen(false);
-            }}
+            onClick={(e) => handleSectionNavigation(e, 'gallery')}
           >
             Gallery
           </a>
@@ -161,11 +172,7 @@ const Navbar = () => {
           <a
             href="#contact"
             className="px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md"
-            onClick={(e) => {
-              e.preventDefault();
-              setIsMenuOpen(false);
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={(e) => handleSectionNavigation(e, 'contact')}
           >
             Contact
           </a>
